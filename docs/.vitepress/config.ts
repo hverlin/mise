@@ -1,5 +1,6 @@
-import { defineConfig, type TransfomContext } from "vitepress";
+import { defineConfig } from "vitepress";
 import { Command, commands } from "./cli_commands";
+import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -170,9 +171,20 @@ export default defineConfig({
     },
   },
   markdown: {
-    // languages: [
-    //   "elisp"
-    // ]
+    config(md) {
+      md.use(groupIconMdPlugin)
+    },
+  },
+  vite: {
+    plugins: [
+      groupIconVitePlugin({
+        customIcon: {
+          '.toml': 'vscode-icons:file-type-toml',
+          'brew': 'logos:homebrew',
+          'curl': 'file-icons:curl'
+        },
+      })
+    ],
   },
   head: [
     [

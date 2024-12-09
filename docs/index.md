@@ -23,13 +23,25 @@ hero:
       link: https://discord.gg/UBa7pJUN7Z
 
 features:
-  - title: <a href="/dev-tools/">Dev Tools</a>
-    details: mise is a polyglot tool version manager. It replaces tools like <a href="https://asdf-vm.com">asdf</a>, nvm, pyenv, rbenv, etc.
-  - title: <a href="/environments.html">Environments</a>
-    details: mise allows you to switch sets of env vars in different project directories. It can replace <a href="https://github.com/direnv/direnv">direnv</a>.
-  - title: <a href="/tasks/">Tasks</a>
-    details: mise is a task runner that can replace <a href="https://www.gnu.org/software/make">make</a>, or <a href="https://docs.npmjs.com/cli/v10/using-npm-scripts">npm scripts</a>.
+  - title: Dev Tools
+    link: /dev-tools/
+    icon:  🛠️
+    details: mise is a polyglot tool version manager. It replaces tools like asdf, nvm, pyenv, rbenv, etc.
+  - title: Environments
+    details: mise allows you to switch sets of env vars in different project directories. It can replace direnv.
+    icon: ⚙
+    link: /environments/
+  - title: Tasks
+    link: /tasks/
+    details: mise is a task runner that can replace make, or npm scripts.
+    icon: ⚡
 ---
+
+<script setup lang="ts">
+import MiseLanding from '.vitepress/theme/components/MiseLanding.vue';
+</script>
+
+<MiseLanding />
 
 <style>
 .formerly {
